@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Learning Platform - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome to the Adaptive Learning Platform!</h1>
+        <h2>Hello, <span id="studentNameDisplay">Guest</span></h2>
+        <p>You've selected <span id="subjectDisplay">no subject</span>.</p>
+
+        <!-- Link to the Dashboard -->
+        <div class="dashboard-link">
+            <p>Ready to start your learning journey?</p>
+            <button id="goToDashboard">Go to Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Adaptive Learning Platform</p>
+    </div>
+
+    <script>
+        // Fetch student's data from localStorage
+        let studentName = localStorage.getItem("studentName");
+        let selectedSubject = localStorage.getItem("selectedSubject");
+
+        // Display the student's name and subject
+        document.getElementById("studentNameDisplay").textContent = studentName ? studentName : "Guest";
+        document.getElementById("subjectDisplay").textContent = selectedSubject ? selectedSubject : "no subject";
+
+        // Go to Dashboard on button click
+        document.getElementById("goToDashboard").addEventListener("click", function() {
+            if (studentName && selectedSubject) {
+                window.location.href = "dashboard.html"; // Redirect to the dashboard
+            } else {
+                alert("Please register first before accessing the dashboard.");
+                window.location.href = "registration.html"; // Redirect to registration page if not registered
+            }
+        });
+    </script>
+
+</body>
+</html>

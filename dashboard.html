@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Student Dashboard</h2>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard-container">
+        <div class="card">
+            <h3>Profile</h3>
+            <p>Name: <span id="studentName"></span></p>
+            <p>Selected Subject: <span id="selectedSubject"></span></p>
+        </div>
+        <div class="card">
+            <h3>Preliminary Exam</h3>
+            <button id="startExam" class="exam-button">Start Preliminary Exam</button>
+        </div>
+        <div class="card">
+            <h3>Results</h3>
+            <p>Check your overall exam results below:</p>
+            <div id="examResult" class="result-message"></div>
+        </div>
+    </div>
+
+    <!-- Preliminary Exam Section -->
+    <div class="exam-section" id="examSection" style="display:none;">
+        <h3>Preliminary Exam - 5 Questions</h3>
+        <form id="examForm">
+            <div class="question">
+                <label for="q1">1. What is 5 + 7?</label>
+                <input type="number" id="q1" name="q1" required>
+            </div>
+            <div class="question">
+                <label for="q2">2. What is the capital of India?</label>
+                <input type="text" id="q2" name="q2" required>
+            </div>
+            <div class="question">
+                <label for="q3">3. What is the square root of 64?</label>
+                <input type="number" id="q3" name="q3" required>
+            </div>
+            <div class="question">
+                <label for="q4">4. Who wrote 'Romeo and Juliet'?</label>
+                <input type="text" id="q4" name="q4" required>
+            </div>
+            <div class="question">
+                <label for="q5">5. What is the boiling point of water?</label>
+                <input type="number" id="q5" name="q5" required>
+            </div>
+            <button type="submit">Submit Exam</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Adaptive Learning Platform</p>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
